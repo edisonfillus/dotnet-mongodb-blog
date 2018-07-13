@@ -19,6 +19,10 @@
         }
     </div>
     <div class="col-md-4">
-        Not finished.
+        <h2>Tag Cloud</h2>
+        @foreach(var tag in Model.Tags)
+        {
+            <p><a href="@Url.Action("Posts", "Home", new { tag = @tag.Name })">@tag.Name</a> - @tag.Count</p>
+        }
     </div>
 </div>

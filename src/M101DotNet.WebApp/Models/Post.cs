@@ -9,11 +9,8 @@ namespace M101DotNet.WebApp.Models
 {
     public class Post
     {
-        // XXX WORK HERE
-        // add in the appropriate properties for a post
-        // The homework instructions contain the schema.
-
-        public ObjectId Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
         public string Author { get; set; }
 
@@ -21,11 +18,10 @@ namespace M101DotNet.WebApp.Models
 
         public string Content { get; set; }
 
-        public List<string> Tags { get; set; }
+        public string[] Tags { get; set; }
 
         public DateTime CreatedAtUtc { get; set; }
 
         public List<Comment> Comments { get; set; }
-
     }
 }
